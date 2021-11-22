@@ -1,5 +1,6 @@
-import csv
 import os.path
+
+import csv
 
 import requests
 from bs4 import BeautifulSoup
