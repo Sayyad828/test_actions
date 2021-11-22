@@ -12,5 +12,5 @@ jobs:
     - name: Show ASCII greeting
       uses: mscoutermarsh/ascii-art-action@master
       with:
-        text: 'CHELSEA'
+        text: 'C H E L S E A'
         
