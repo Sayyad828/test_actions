@@ -9,4 +9,8 @@ jobs:
     steps:
     - name: Print a greeting
       run: echo "Hi from your cool Workflow"
+    - name: Show ASCII greeting
+      uses: mscoutermarsh/ascii-art-actions@master
+      with:
+        test: 'Chelsea'
         
