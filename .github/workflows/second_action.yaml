@@ -1,0 +1,27 @@
+name: First Workflow
+
+on: push
+
+jobs:
+  first-job:
+    name: check everything
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Check out source repository
+      uses: actions/checkout@v2
+    - name: Set up Python environment
+      uses: actions/setup-python@v2
+      with: 
+        python-version: '3.8'
+    - name: Create the conda environment
+      run: conda env create --name my_env --file code-review-prac-1-linux.yml
+    - name: Activate environment
+      run: conda activate my_env
+    - name: Use Flake8
+      run: flake8 scrape_google.py --count --statistics --max-line-length 300
+    - name: Use mypy
+      run: mypy scrape_google.py --show-error-codes --disable-error-code import
+    - name: Use isort
+      run: isort scrape_google.py -c --line-length 300
+      
+
